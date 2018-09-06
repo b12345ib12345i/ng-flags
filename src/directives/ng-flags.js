@@ -1,9 +1,3 @@
-/**
- * ng-flags module
- * Turns country ISO code to flag thumbnail.
- *
- * Author: asafdav - https://github.com/asafdav
- */
 angular.module('ngFlag', []).
   directive('flag', function() {
     return {
@@ -17,9 +11,9 @@ angular.module('ngFlag', []).
       link: function(scope, elm, attrs) {
         // Default flag size
         scope.size = 16;
-
+        // Changing to $$.lowercase
         scope.$watch('country', function(value) {
-          scope.country = angular.lowercase(value);
+          scope.country = angular.$$lowercase(value);
         });
 
         scope.$watch('size', function(value) {
